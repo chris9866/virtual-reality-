@@ -4,7 +4,16 @@
   </head>
   <body>
     <a-scene>
-      <a-assets>
+            <a-sphere position="3 10.25 -2" radius="1.25" color="yellow"></a-sphere>
+      <a-sphere position="3 3.25 -2" theta-start="0" theta-length="90" radius="1.25" color="yellow" side="double"></a-sphere>
+      <a-sphere position="3 3.25 -2" phi-start="0" phi-length="180" radius="1.25" color="yellow" side="double"></a-sphere>
+        <a-sphere position="3 3.25 -2" theta-start="0" theta-length="90" phi-start="0" phi-length="180" radius="1.25" color="yellow" side="double"></a-sphere>
+     <a-circle positon="4 4.25 -2"></a-circle>
+      
+      
+        <a-assets>
+
+
         <img id="texture" src="pacman_maze.jpg" />
       </a-assets>
       <a-plane position="0 0 -4" rotation="-90 0 0" width="20" height="20" repeat="5 5" src="#texture"></a-plane>
