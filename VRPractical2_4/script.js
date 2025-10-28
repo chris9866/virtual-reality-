@@ -4,12 +4,13 @@ let scene;
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene"); 
 
-rocket = new rocket(0,0);
+rocket = new Rocket(0,0);
 
   loop();
 })
 
 function loop(){
+  rocket.launch();
   rocket.spin();
 
 
