@@ -1,13 +1,14 @@
 class Rocket {
       constructor(x, y, z) {
-        // Store y position and movement speed
+        this.x = x;
+        this.z = z;
         this.y = y;
-        this.dy = Math.random() * 0.05 + 0.02; // Random upward speed
+        this.dy = Math.random() * 0.05 + 0.02; 
         
-        // Create container entity
+        
         this.obj = document.createElement("a-entity");
         
-        // Rocket body (main cylinder)
+       
         let body = document.createElement("a-cylinder");
         body.setAttribute("color", "#0000");
         body.setAttribute("height", 3);
@@ -145,6 +146,9 @@ class Rocket {
           smoke.setAttribute("position", {x: 0, y: -0.5, z: 0});
           this.obj.append(smoke);
 
+
+          
+
         }
 
 
@@ -162,6 +166,7 @@ class Rocket {
         rot.y += 6;
         this.obj.setAttribute("rotation", rot);
       }
+      }
+
       
      
-    } 
