@@ -22,13 +22,54 @@ class UFO {
     base.setAttribute("position", { x: 0, y: -0.6, z: 0 });
     this.obj.append(base);
 
+    let dome = document.createElement("a-hemisphere");
+    dome.setAttribute("color", "#ADD8E6");
+    dome.setAttribute("radius", 0.7);
+    dome.setAttribute("position", { x: 0, y: 0.3, z: 0 });
+    this.obj.append(dome);
+
+    let antenna = document.createElement("a-cylinder");
+    antenna.setAttribute("color", "#FFD700");
+    antenna.setAttribute("radius", 0.05);
+    antenna.setAttribute("height", 0.5);
+    antenna.setAttribute("position", { x: 0, y: 1.3, z: 0 });
+    this.obj.append(antenna);
+
+    let tip = document.createElement("a-sphere");
+    tip.setAttribute("color", "#FF4500");
+    tip.setAttribute("radius", 0.1);
+    tip.setAttribute("position", { x: 0, y: 1.55, z: 0 });
+    this.obj.append(tip);
+
+    let glow = document.createElement("a-ring");
+    glow.setAttribute("color", "#00FFFF");
+    glow.setAttribute("radius-inner", 1.5);
+    glow.setAttribute("radius-outer", 2);
+    glow.setAttribute("position", { x: 0, y: -0.7, z: 0 });
+    glow.setAttribute("rotation", { x: -90, y: 0, z: 0 });
+    this.obj.append(glow);
+
+    let beam = document.createElement("a-cone");
+    beam.setAttribute("color", "#FFFF00");
+    beam.setAttribute("opacity", 0.5);
+    beam.setAttribute("radius-bottom", 1);
+    beam.setAttribute("radius-top", 0);
+    beam.setAttribute("height", 5);
+    beam.setAttribute("position", { x: 0, y: -3, z: 0 });
+    this.obj.append(beam);
+
+    
+
 
 
   }
 
   invade() {
     let pos = this.obj.getAttribute("position");
-    pos.y += Math.sin(Date.now() * 0.001) * 0.01;
+    pos.y += 0.1;
+    if (pos.y > 10) {
+      pos.y = -5;
+    }
     this.obj.setAttribute("position", pos);
   }
 }
