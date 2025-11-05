@@ -1,8 +1,14 @@
 class UFO {
   constructor(x, y, z) {
+    this.x = x;
+    this.y = y;
+    this.z = z;
+    this.dy = -(Math.random() * 0.05 + 0.01);
     this.obj = document.createElement("a-entity");
     this.obj.setAttribute("position", { x: x, y: y, z: z });
     scene.append(this.obj);
+    
+    
 
     let body = document.createElement("a-sphere");
     body.setAttribute("color", "#7CFC00");
@@ -65,11 +71,10 @@ class UFO {
   }
 
   invade() {
-    let pos = this.obj.getAttribute("position");
-    pos.y += 0.1;
-    if (pos.y > 10) {
-      pos.y = -5;
+    this.y += this.dy;
+    if (this.y < 0) {
+      this.y = 10;
     }
-    this.obj.setAttribute("position", pos);
+    this.obj.setAttribute("position", { x: this.x, y: this.y, z: this.z });
   }
 }

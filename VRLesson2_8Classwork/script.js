@@ -15,3 +15,9 @@ function loop(){
 
   window.requestAnimationFrame( loop );
 }
+
+
+this.x += this.dx;
+if(this.x > 0 || this.x < -1){
+  this.dx = -this.dx;
+}

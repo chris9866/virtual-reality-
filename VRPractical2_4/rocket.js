@@ -71,6 +71,7 @@ class Rocket {
         light.setAttribute("radius", 0.05);
         light.setAttribute("position", {x: 0, y: 4.8, z: 0});
         this.obj.append(light);
+  
 
         let missileTip= document.createElement("a-cone");
         missileTip.setAttribute("color", "#FF0000");
