@@ -10,14 +10,16 @@
    you chose to put in the maze.  Get Creative!
 */
 
+
+
 let maze = [
+  "-----------------------",
   "----------------------",
+  "-----------------------",
+  "---------------------",
   "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
+  "---------------------",
+  "---------------------",
   "----------------------",
   "----------------------",
   "----------------------",
@@ -29,6 +31,8 @@ let maze = [
    Add appropriate classes to use as objects in your map.  Choose characters to represent these objects and position them on the map.   In Challenge 5 and 6, you will generate the map using the character representation of the objects you chose to place in the world. Get Creative!
 */
 
+
+
 let scene;
 
 window.addEventListener("DOMContentLoaded",function() {
@@ -37,10 +41,28 @@ window.addEventListener("DOMContentLoaded",function() {
     /* Challenge 3
       Choose a technique to traverse the each character in the string.
     */ 
+    for(let c = 0; c < maze[r].length; c++){
+      let char = maze[r].charAt(c);
+      let x = c - maze[r].length / 2;
+      let z = r - maze.length / 2;
+      if(char === "-"){
+        /* Challenge 4
+           Make an appropriate decision based on the characters you chose to enter 
+           in the maze.  Create an instance of the corresponding object.
+        */
+        new MapWall(x, z);
+      } else {
+        /* Challenge 4
+           Make an appropriate decision based on the characters you chose to enter 
+           in the maze.  Create an instance of the corresponding object.
+        */
+        new MapPath(x, z);
+      }
     /* Challenge 4
        Make an appropriate decision based on the characters you chose to enter 
        in the maze.  Create an instance of the corresponding object.
     */
   }
 
-})
+  }
+});
