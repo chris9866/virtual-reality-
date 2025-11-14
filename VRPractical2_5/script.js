@@ -10,59 +10,49 @@
    you chose to put in the maze.  Get Creative!
 */
 
-
-
 let maze = [
-  "-----------------------",
-  "----------------------",
-  "-----------------------",
-  "---------------------",
-  "----------------------",
-  "---------------------",
-  "---------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
+  "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "xS x     x          x        x",
+  "xx x xxx x xxxxxxxx x xxxxx xx",
+  "x  x x   x x      x x x   x  x",
+  "x xxxx x x x xxx  x x xxx x xx",
+  "x      x x x x x  x x   x    x",
+  "xxxxxx x x x x x xx x xxxxx xx",
+  "x    x x x x x x    x x      x",
+  "xx x x x x x x xxxx x x xxx xx",
+  "x  x x   x x x    x x x   x  x",
+  "x xxxx xxx x x xx x x xxx x xx",
+  "x      x   x x x  x x   x    x",
+  "xx xxxxxxx x x xxxx x xxxxx xx",
+  "x          x x x    x        E",
+  "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
 ];
 
 /* Challenge 2
    Add appropriate classes to use as objects in your map.  Choose characters to represent these objects and position them on the map.   In Challenge 5 and 6, you will generate the map using the character representation of the objects you chose to place in the world. Get Creative!
 */
 
-
-
 let scene;
 
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
   for(let r = 0; r < maze.length; r++){
+    let row = maze[r];
+    let cols = row.split("");
+    for(let c = 0; c < cols.length; c++){
+      if (cols[c] == "x"){
+        new Wall(c,1,r);
+      }
+
+
+     
     /* Challenge 3
       Choose a technique to traverse the each character in the string.
     */ 
-    for(let c = 0; c < maze[r].length; c++){
-      let char = maze[r].charAt(c);
-      let x = c - maze[r].length / 2;
-      let z = r - maze.length / 2;
-      if(char === "-"){
-        /* Challenge 4
-           Make an appropriate decision based on the characters you chose to enter 
-           in the maze.  Create an instance of the corresponding object.
-        */
-        new MapWall(x, z);
-      } else {
-        /* Challenge 4
-           Make an appropriate decision based on the characters you chose to enter 
-           in the maze.  Create an instance of the corresponding object.
-        */
-        new MapPath(x, z);
-      }
     /* Challenge 4
        Make an appropriate decision based on the characters you chose to enter 
        in the maze.  Create an instance of the corresponding object.
     */
   }
 
-  }
-});
+}})

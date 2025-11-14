@@ -1,9 +1,13 @@
-class wall extends HTMLElement {
-  constructor() {
-    super();
-  }
+class Wall{
+  constructor(x,y,z){
+    this.x = x;
+    this.y = y;
+    this.z = y;
+    
+    this.obj = document.createElement("a-box");
+    this.obj.setAttribute("color","cyan");
+    this.obj.setAttribute("position",{x:x,y:y,z:z});
+    scene.append(this.obj);
 
-  connectedCallback() {
-    this.innerHTML = `
-      <a-box position="0 1.5 -3" rotation="0 45 0" color="#4CC3D9" depth="0.1" height="3" width="3"></a-box>
-    `;
+  }
+}
