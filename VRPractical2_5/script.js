@@ -12,7 +12,7 @@
 
 let maze = [
   "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "xS x     x          x        x",
+  "x x     x          x        x",
   "xx x xxx x xxxxxxxx x xxxxx xx",
   "x  x x   x x      x x x   x  x",
   "x xxxx x x x xxx  x x xxx x xx",
@@ -24,7 +24,7 @@ let maze = [
   "x xxxx xxx x x xx x x xxx x xx",
   "x      x   x x x  x x   x    x",
   "xx xxxxxxx x x xxxx x xxxxx xx",
-  "x          x x x    x        E",
+  "x          x x x    x        ",
   "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
 ];
 
